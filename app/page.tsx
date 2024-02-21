@@ -107,6 +107,8 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+
+        <h1 className="flex items-center justify-center text-lg">Lebron James</h1>
       </div>
     </main>
   );
