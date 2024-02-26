@@ -39,6 +39,7 @@ body {
 }
 
 .regular-btn:hover {
+  transform: translateY(-4px);
   background-color: #ffffff48;
 }
 
