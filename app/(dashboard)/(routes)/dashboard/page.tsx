@@ -10,12 +10,12 @@ const dashboard: React.FC<dashboardProps> = () => {
         <div className="flex">
           <input
             type="text"
-            placeholder="Text to encrypt"
+            placeholder="Input"
             className="text-white bg-black border-2 border-[#ffffff48] p-2 rounded focus:outline-[#ffffff9a] mr-4"
           ></input>
           <input
             type="text"
-            placeholder="Key"
+            placeholder="Output"
             className="text-white bg-black border-2 border-[#ffffff48] p-2 rounded focus:outline-[#ffffff9a]"
           ></input>
         </div>
