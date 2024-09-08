@@ -5,7 +5,6 @@ import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { LuCopy } from "react-icons/lu";
 import { FaCheck } from "react-icons/fa6";
-import { setSourceMapsEnabled } from "process";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
