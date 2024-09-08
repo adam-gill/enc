@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "enc",
-  description: "client-side encryption &decryption",
+  description: "client-side encryption & decryption",
 };
 
 export default function RootLayout({
