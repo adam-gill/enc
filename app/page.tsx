@@ -190,6 +190,22 @@ export default function Home() {
           className="w-full max-w-[40%] md:max-w-[90%] h-[300px] rounded-md bg-white text-black focus:outline-none px-2 break-words relative"
         >
           {output}
+
+          <IoCloseOutline
+            className={`${
+              output ? "block" : "hidden"
+            } absolute bottom-1 left-1 fill-black stroke-black cursor-pointer
+          hover:scale-110 hover:stroke-red-600
+          transition-all duration-500
+          `}
+            onClick={() => {
+              SetOutput("");
+              setKey("");
+              setText("");
+            }}
+            size={32}
+          />
+
           <LuCopy
             size={24}
             onClick={() => {
@@ -198,13 +214,13 @@ export default function Home() {
             }}
             className={`stroke-black absolute bottom-2 right-2 cursor-pointer
           ${showAnimation ? "hidden" : "block"}
-          hover:scale-[1.05]
+          hover:scale-[1.05] hover:stroke-green-400
           transition-all duration-500
             `}
           />
           <FaCheck
             size={24}
-            className={`stroke-black absolute bottom-2 right-2 cursor-pointer
+            className={`fill-green-400 absolute bottom-2 right-2 cursor-pointer
           hover:scale-[1.05]
           transition-all duration-500 ${showAnimation ? "block" : "hidden"}
           `}
