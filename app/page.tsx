@@ -213,7 +213,7 @@ export default function Home() {
               clipboardAnimation();
             }}
             className={`stroke-black absolute bottom-2 right-2 cursor-pointer
-          ${showAnimation ? "hidden" : "block"}
+          ${showAnimation || !output ? "hidden" : "block"}
           hover:scale-[1.05] hover:stroke-green-400
           transition-all duration-500
             `}
