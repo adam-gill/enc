@@ -146,7 +146,7 @@ export default function Home() {
           onChange={(e) => setKey(e.target.value)}
           id="key"
           type="text"
-          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none rounded-md px-2 mt-2 break-words"
+          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none rounded-md px-2 py-1 mt-2 break-words"
         />
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -159,7 +159,7 @@ export default function Home() {
           onChange={(e) => setText(e.target.value)}
           id="text"
           type="text"
-          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none rounded-md px-2 mt-2"
+          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none flex justify-start rounded-md px-2 py-1 mt-2 break-words"
         />
       </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
       <div className="flex items-center justify-center mt-4 flex-col">
         <div
           id="output"
-          className="w-full max-w-[40%] md:max-w-[90%] h-[300px] rounded-md bg-white text-black focus:outline-none px-2 break-words relative"
+          className="w-full max-w-[40%] md:max-w-[90%] h-80 rounded-md bg-white text-black focus:outline-none px-2 break-words relative"
         >
           {output}
 
