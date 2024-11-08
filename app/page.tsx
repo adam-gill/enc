@@ -235,7 +235,7 @@ export default function Home() {
             }}
             className={`stroke-black absolute top-2 right-2 cursor-pointer
           ${showAnimation || !output ? "hidden" : "block"}
-          hover:scale-[1.05] hover:stroke-green-400
+          hover:scale-[1.05]
           transition-all duration-500
             `}
           />
