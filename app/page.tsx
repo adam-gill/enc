@@ -241,7 +241,7 @@ export default function Home() {
           />
           <FaCheck
             size={24}
-            className={`fill-green-400 absolute bottom-2 right-2 cursor-pointer
+            className={`fill-green-400 absolute top-2 right-2 cursor-pointer
           hover:scale-[1.05]
           transition-all duration-500 ${showAnimation ? "block" : "hidden"}
           `}
