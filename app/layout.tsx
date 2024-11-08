@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Space_Grotesk } from 'next/font/google';
+import { Space_Grotesk } from "next/font/google"
+import { cn } from "@/lib/utils";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '700']
+const space = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  style: "normal",
+  subsets: ["latin"]
 })
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={spaceGrotesk.className}
+        className={cn("antialiased ", space.className)}
       >
         {children}
       </body>

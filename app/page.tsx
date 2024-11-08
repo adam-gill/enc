@@ -1,7 +1,7 @@
 "use client";
 
 import { TbSwitchHorizontal } from "react-icons/tb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { LuCopy } from "react-icons/lu";
 import { FaCheck } from "react-icons/fa6";
@@ -16,6 +16,27 @@ export default function Home() {
   const [output, SetOutput] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [showAnimation, setShowAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleKeydown = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        if (window.scrollY === 0) {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        } else if (window.scrollY !== 0) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        event.preventDefault(); // Prevent the default Ctrl/Cmd+K behavior
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, []);
 
   const copyToClipboard = async (text: string): Promise<void> => {
     try {
@@ -146,7 +167,7 @@ export default function Home() {
           onChange={(e) => setKey(e.target.value)}
           id="key"
           type="text"
-          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none rounded-md px-2 py-1 mt-2 break-words"
+          className="w-full max-w-[45%] md:max-w-[90%] text-black focus:outline-none rounded-md px-2 py-1 mt-2 break-words"
         />
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -159,7 +180,7 @@ export default function Home() {
           onChange={(e) => setText(e.target.value)}
           id="text"
           type="text"
-          className="w-full max-w-[40%] md:max-w-[90%] text-black focus:outline-none flex justify-start rounded-md px-2 py-1 mt-2 break-words"
+          className="w-full max-w-[45%] md:max-w-[90%] text-black focus:outline-none flex justify-start rounded-md px-2 py-1 mt-2 break-words"
         />
       </div>
 
@@ -187,14 +208,14 @@ export default function Home() {
       <div className="flex items-center justify-center mt-4 flex-col">
         <div
           id="output"
-          className="w-full max-w-[40%] md:max-w-[90%] h-80 rounded-md bg-white text-black focus:outline-none px-2 break-words relative"
+          className="w-full max-w-[45%] md:max-w-[90%] min-h-80 h-fit rounded-md bg-white text-black focus:outline-none px-10 py-2 break-words relative"
         >
           {output}
 
           <IoCloseOutline
             className={`${
               output ? "block" : "hidden"
-            } absolute bottom-1 left-1 fill-black stroke-black cursor-pointer
+            } absolute top-2 left-2 fill-black stroke-black cursor-pointer
           hover:scale-110 hover:stroke-red-600
           transition-all duration-500
           `}
@@ -212,7 +233,7 @@ export default function Home() {
               copyToClipboard(output);
               clipboardAnimation();
             }}
-            className={`stroke-black absolute bottom-2 right-2 cursor-pointer
+            className={`stroke-black absolute top-2 right-2 cursor-pointer
           ${showAnimation || !output ? "hidden" : "block"}
           hover:scale-[1.05] hover:stroke-green-400
           transition-all duration-500
@@ -243,7 +264,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex mt-2 gap-2 absolute bottom-0 left-1/2 -translate-x-1/2 pb-4">
+      <div className="flex w-full items-center justify-center mt-2 gap-2 pb-4">
         <Link href={"https://www.linkedin.com/in/ogag/"}>
           <FaLinkedin size={24} />
         </Link>
