@@ -172,7 +172,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="w-full flex flex-col items-center justify-center mb-4">
+        <div className="w-full flex flex-col items-center justify-center mb-4 px-8">
           <label htmlFor="key" className="text-2xl">
             input key:
           </label>
@@ -184,10 +184,10 @@ export default function Home() {
             id="key"
             type="text"
             ref={keyInputRef}
-            className="w-full max-w-[45%] md:max-w-[90%] bg-white text-black focus:outline-none rounded-md px-2 py-1 mt-2 wrap-break-word"
+            className="w-full bg-white text-black focus:outline-none rounded-md px-2 py-1 mt-2 wrap-break-word"
           />
         </div>
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center px-8">
           <label htmlFor="text" className="text-2xl">
             {isEnc ? "plaintext:" : "ciphertext:"}
           </label>
@@ -197,7 +197,7 @@ export default function Home() {
             value={text}
             onChange={handleTextChange}
             id="text"
-            className="w-full max-w-[45%] md:max-w-[90%] bg-white text-black focus:outline-none rounded-md px-2 py-1 mt-2 resize-none overflow-y-auto no-scrollbar"
+            className="w-full bg-white text-black focus:outline-none rounded-md px-2 py-1 mt-2 resize-none overflow-y-auto no-scrollbar"
             style={{ height: "32px" }}
           />
         </div>
@@ -229,10 +229,10 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="w-full flex items-center justify-center mt-4 flex-col">
+        <div className="w-full flex items-center justify-center mt-4 flex-col px-8">
           <div
             id="output"
-            className="w-full max-w-[45%] md:max-w-[90%] min-h-80 h-fit rounded-md bg-white text-black focus:outline-none px-10 py-2 wrap-break-word relative"
+            className="w-full min-h-80 h-fit rounded-md bg-white text-black focus:outline-none px-10 py-2 wrap-break-word relative"
           >
             {output}
 
